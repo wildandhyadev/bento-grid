@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Bento grid</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        background-color: hsl(120, 5%, 96%);
+        font-family: "DM Sans", sans-serif;
+        margin: 0;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6, 100px);
+        grid-gap: 20px;
+        width: 90%;
+        margin: 10px auto;
+      }
+
+      main div {
+        border-radius: 10px;
+      }
+
+      .item1 {
+        grid-row: span 3;
+        display: flex;
+        flex-direction: column;
+        padding: 0 3vw;
+        background-color: hsl(31, 66%, 93%);
+      }
+
+      .item1 h1 {
+        font-size: 33px;
+        line-height: 30px;
+        font-weight: 400;
+        color: hsl(0, 0%, 7%);
+      }
+
+      .item1 i {
+        font-size: 33px;
+        line-height: 32px;
+        font-weight: 400;
+        color: hsl(256, 67%, 59%);
+      }
+
+      .item1 img {
+        width: 12vw;
+        height: 9vh;
+      }
+
+      .item2 {
+        grid-row: span 2;
+        grid-column: span 2;
+        background-color: hsl(256, 67%, 59%);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .item2 h1 {
+        font-size: 45px;
+        line-height: 45px;
+        font-weight: 500;
+        color: white;
+        margin-bottom: 17px;
+      }
+
+      .item2 span {
+        font-size: 45px;
+        line-height: 32px;
+        font-weight: 500;
+        color: hsl(39, 100%, 71%);
+      }
+
+      .item2 p {
+        margin-top: 5px;
+        margin-bottom: 25px;
+        font-size: 13px;
+        font-weight: 400;
+        color: hsl(35, 14%, 83%);
+      }
+
+      .item2 img {
+        width: 150px;
+        height: 22px;
+      }
+      .item3 {
+        grid-row: span 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        max-width: 300px;
+        padding: 15px 0px 15px 25px;
+        background-color: hsl(254, 88%, 90%);
+      }
+
+      .item3 h1 {
+        font-size: 24px;
+        line-height: 20px;
+        font-weight: 500;
+        color: hsl(0, 0%, 7%);
+        margin-top: 20px;
+      }
+
+      .item3 p {
+        margin-top: 10px;
+        margin-bottom: 25px;
+        font-size: 15px;
+        font-weight: 400;
+        color: hsl(0, 0%, 7%);
+      }
+
+      .image-container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+      }
+
+      .image-container img {
+        width: 300px;
+        height: 100%;
+        object-fit: fill;
+        position: absolute;
+        top: 0;
+        left: -5px;
+      }
+
+      .item4 {
+        grid-row: span 2;
+        background-color: #f7f6f8;
+        box-shadow: -3px 2px 12px 0px rgba(228, 222, 222, 0.75);
+        display: flex;
+        flex-direction: column;
+        padding-left: 20px;
+        padding-top: 20px;
+        overflow: hidden;
+      }
+
+      .item4 img {
+        /* background-color: #f7f6f8; */
+        background-color: #fbfbfb;
+        width: 270px;
+        height: 60px;
+      }
+
+      .item4 h1 {
+        font-size: 29px;
+        line-height: 23px;
+        font-weight: 500;
+        color: hsl(0, 0%, 7%);
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+
+      .item5 {
+        grid-row: span 2;
+        background-color: hsl(39, 100%, 71%);
+        padding: 0px 20px;
+        overflow: hidden;
+      }
+
+      .item5 img {
+        width: 11vw;
+        height: auto
+      }
+
+      .item5 h1 {
+        font-size: 29px;
+        line-height: 25px;
+        font-weight: 500;
+        color: hsl(0, 0%, 7%);
+        margin-top: 20px;
+      }
+      .item6 {
+        grid-row: span 3;
+        background-color: hsl(39, 100%, 71%);
+        padding: 0px 20px;
+      }
+      .item6 img {
+        width: 12vw;
+        height: auto;
+        padding-top: 5px;
+      }
+
+      .item6 h1 {
+        font-size: 29px;
+        line-height: 25px;
+        font-weight: 500;
+        color: hsl(0, 0%, 7%);
+        margin-top: 20px;
+      }
+      .item7 {
+        grid-row: span 2;
+        padding: 0px 20px;
+        background-color: #f7f6f8;
+        box-shadow: -3px 2px 12px 0px rgba(228, 222, 222, 0.75);
+      }
+      .item7 img {
+        width: 10vw;
+        height: auto;
+        padding-top: 5px;
+      }
+
+      .item7 h1 {
+        font-size: 38px;
+        line-height: 25px;
+        font-weight: 500;
+        color: hsl(0, 0%, 7%);
+        margin-top: 20px;
+        margin-bottom: 0;
+      }
+      .item8 {
+        grid-row: span 2;
+        grid-column: span 2;
+        background-color: hsl(256, 67%, 59%);
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        text-align: start;
+        padding: 20px;
+      }
+      .item8 img {
+        width: 15vw;
+        height: auto;
+        padding-top: 5px;
+      }
+
+      .item8 h1 {
+        font-size: 38px;
+        line-height: 35px;
+        font-weight: 500;
+        color: white;
+        padding-left: 10px;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="item1">
+        <h1>
+          Create and <br />
+          schedule <br />
+          content <br />
+          <i>quicker.</i>
+        </h1>
+        <img src="./assets/images/illustration-create-post.webp" alt="" />
+      </div>
+      <div class="item2">
+        <h1>
+          Social Media <span>10x</span> <br />
+          <i>Faster</i> with AI
+        </h1>
+        <img src="./assets/images/illustration-five-stars.webp" alt="" />
+        <p>Over 4,000 5-star reviews</p>
+      </div>
+      <div class="item3">
+        <h1>
+          Schedule to <br />
+          social media.
+        </h1>
+        <div class="image-container">
+          <img src="./assets/images/illustration-schedule-posts.webp" alt="" />
+        </div>
+        <p>
+          Optimize post timings <br />
+          to publish content at <br />
+          the perfect time for <br />
+          your audience.
+        </p>
+      </div>
+      <div class="item4">
+        <img
+          src="./assets/images/illustration-multiple-platforms.webp"
+          alt=""
+        />
+        <h1>
+          Manage <br />
+          multiple <br />
+          accounts and <br />
+          platforms.
+        </h1>
+      </div>
+      <div class="item5">
+        <h1>
+          Maintain a <br />
+          consistent <br />
+          posting <br />
+          schedule.
+        </h1>
+        <img
+          src="./assets/images/illustration-consistent-schedule.webp"
+          alt=""
+        />
+      </div>
+      <div class="item6">
+        <h1>
+          Write your <br />
+          content <br />
+          using AI.
+        </h1>
+        <img src="./assets/images/illustration-ai-content.webp" alt="" />
+      </div>
+      <div class="item7">
+        <h1>>56%</h1>
+        <p>faster audience growth</p>
+        <img src="./assets/images/illustration-audience-growth.webp" alt="" />
+      </div>
+      <div class="item8">
+        <img src="./assets/images/illustration-grow-followers.webp" alt="" />
+        <h1>Grow followers <br> with non-stop <br> content.</h1>
+      </div>
+    </main>
+  </body>
+</html>
